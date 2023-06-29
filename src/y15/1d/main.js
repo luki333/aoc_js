@@ -1,4 +1,5 @@
 #!/usr/bin/env bun
+import {add} from '@tools';
 import input from './input.txt';
 
 const part1 = Array.from(input).map(getCode).reduce(add);
@@ -14,9 +15,6 @@ let part2;
   }
 }
 
-function add(a, b) {
-  return a + b;
-}
 function getCode(c) {
   if (c === '(') return 1;
   else return -1;
