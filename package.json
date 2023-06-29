@@ -1,0 +1,13 @@
+{
+  "type": "module",
+  "scripts": {
+    "format": "prettier -u -w --cache ."
+  },
+  "devDependencies": {
+    "bun-types": "latest",
+    "prettier": "2.8.8"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  }
+}
