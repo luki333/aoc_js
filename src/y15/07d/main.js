@@ -28,7 +28,6 @@ function resolveSignal(char, parsedLines, cache = new Map()) {
     default:
       return fn(op);
   }
-
   function fn(char) {
     if (cache.has(char)) return cache.get(char);
     const signal = resolveSignal(char, parsedLines, cache);
