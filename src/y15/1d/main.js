@@ -17,8 +17,8 @@ let part2;
   }
 }
 
-function getCode(c) {
-  if (c === '(') return 1;
+function getCode(char) {
+  if (char === '(') return 1;
   else return -1;
 }
 

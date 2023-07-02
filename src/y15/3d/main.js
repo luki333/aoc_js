@@ -5,8 +5,8 @@ let part1;
 {
   const loc = [0, 0];
   const visited = new Set([loc.toString()]);
-  for (const c of input) {
-    const [i, n] = getInstruct(c);
+  for (const char of input) {
+    const [i, n] = getInstruct(char);
     loc[i] += n;
     visited.add(loc.toString());
   }
@@ -20,8 +20,8 @@ let part2;
     [0, 0],
   ];
   const visited = new Set([locArr[0].toString()]);
-  for (const [i, c] of Object.entries(input)) {
-    const [j, n] = getInstruct(c);
+  for (const [i, char] of Object.entries(input)) {
+    const [j, n] = getInstruct(char);
     const loc = locArr[Number(i) % 2];
     loc[j] += n;
     visited.add(loc.toString());
@@ -29,8 +29,8 @@ let part2;
   part2 = visited.size;
 }
 
-function getInstruct(c) {
-  switch (c) {
+function getInstruct(char) {
+  switch (char) {
     case '^':
       return [1, 1];
     case '>':

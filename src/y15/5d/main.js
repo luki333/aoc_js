@@ -8,9 +8,11 @@ let part1;
 {
   part1 = lines.map(isNiceString).reduce(add);
 
-  function isNiceString(s) {
+  function isNiceString(str) {
     return (
-      !/ab|cd|pq|xy/.test(s) && /.*(.)\1/.test(s) && /(.*[aeuio].*){3}/.test(s)
+      !/ab|cd|pq|xy/.test(str) &&
+      /.*(.)\1/.test(str) &&
+      /(.*[aeuio].*){3}/.test(str)
     );
   }
 }
@@ -19,8 +21,8 @@ let part2;
 {
   part2 = lines.map(isNiceString).reduce(add);
 
-  function isNiceString(s) {
-    return /(.).\1/.test(s) && /(..).*\1/.test(s);
+  function isNiceString(str) {
+    return /(.).\1/.test(str) && /(..).*\1/.test(str);
   }
 }
 

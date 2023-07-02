@@ -2,8 +2,6 @@
 import {add} from '@tools';
 import input from './input.txt';
 
-console.time();
-
 const parsedLines = input.split('\n').map(parseLine);
 const arr = new Array(1_000 ** 2);
 
@@ -59,7 +57,5 @@ function parseLine(line) {
   const [xFrom, yFrom, xTo, yTo] = line.match(/\d+/g).map(Number);
   return {instruct, xFrom, yFrom, xTo, yTo};
 }
-
-console.timeEnd();
 
 console.log(part1, part2);
