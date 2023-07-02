@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "format": "prettier -u -w --cache"
+  },
   "compilerOptions": {
     "types": ["bun-types"],
     "paths": {"@tools": ["./src/tools.js"]}

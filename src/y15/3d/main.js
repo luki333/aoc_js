@@ -6,7 +6,7 @@ let part1;
   const loc = [0, 0];
   const visited = new Set([loc.toString()]);
   for (const c of input) {
-    const [i, n] = getDirection(c);
+    const [i, n] = getInstruct(c);
     loc[i] += n;
     visited.add(loc.toString());
   }
@@ -15,19 +15,21 @@ let part1;
 
 let part2;
 {
-  const loc1 = [0, 0];
-  const loc2 = loc1.slice();
-  const visited = new Set([loc1.toString()]);
+  const locArr = [
+    [0, 0],
+    [0, 0],
+  ];
+  const visited = new Set([locArr[0].toString()]);
   for (const [i, c] of Object.entries(input)) {
-    const [j, n] = getDirection(c);
-    const loc = [loc1, loc2][Number(i) % 2];
+    const [j, n] = getInstruct(c);
+    const loc = locArr[Number(i) % 2];
     loc[j] += n;
     visited.add(loc.toString());
   }
   part2 = visited.size;
 }
 
-function getDirection(c) {
+function getInstruct(c) {
   switch (c) {
     case '^':
       return [1, 1];

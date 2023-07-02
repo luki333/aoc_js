@@ -2,9 +2,11 @@
 import {add} from '@tools';
 import input from './input.txt';
 
+const lines = input.split('\n');
+
 let part1;
 {
-  part1 = input.split('\n').map(isNiceString).reduce(add);
+  part1 = lines.map(isNiceString).reduce(add);
 
   function isNiceString(s) {
     return (
@@ -15,10 +17,10 @@ let part1;
 
 let part2;
 {
-  part2 = input.split('\n').map(isNiceString).reduce(add);
+  part2 = lines.map(isNiceString).reduce(add);
 
   function isNiceString(s) {
-    return /(..).*\1/.test(s) && /(.).\1/.test(s);
+    return /(.).\1/.test(s) && /(..).*\1/.test(s);
   }
 }
 

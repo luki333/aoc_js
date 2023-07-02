@@ -2,12 +2,14 @@
 import {add} from '@tools';
 import input from './input.txt';
 
-const part1 = Array.from(input).map(getCode).reduce(add);
+const chars = Array.from(input);
+
+const part1 = chars.map(getCode).reduce(add);
 
 let part2;
 {
   let acc = 1;
-  part2 = Array.from(input).map(getCode).findIndex(isAccNegative);
+  part2 = chars.map(getCode).findIndex(isAccNegative);
 
   function isAccNegative(n) {
     acc += n;
