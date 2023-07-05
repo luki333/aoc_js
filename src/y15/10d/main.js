@@ -14,7 +14,7 @@ for (let i = 0; i < 10; i++) {
 console.log(str1.length, str2.length);
 
 function lookAndSay(str) {
-  const reRepeatedDight = new RegExp(/([0-9])\1*/g);
+  const reRepeatedDight = /([0-9])\1*/g;
   let result = '';
   for (let match; (match = reRepeatedDight.exec(str)) !== null; )
     result += match.at(0).length + match.at(1);
