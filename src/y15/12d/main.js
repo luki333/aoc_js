@@ -1,6 +1,6 @@
 #!/usr/bin/env bun
-import {add} from '@tools';
 import input from './input.txt';
+import {add} from '@tools';
 
 const part1 = input.match(/-?\d+/g).map(Number).reduce(add);
 

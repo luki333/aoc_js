@@ -1,5 +1,6 @@
 #!/usr/bin/env bun
 import input from './input.txt';
+import {permute} from '@tools';
 
 const parsedLines = input.split('\n').map(parseLine);
 
@@ -25,23 +26,6 @@ for (const permuted of permute(locs)) {
 
 console.log(Math.min(...totalDistances), Math.max(...totalDistances));
 
-function permute(items) {
-  if (!items.length) {
-    return [[]];
-  }
-  const [first, ...rest] = items;
-  return permute(rest).flatMap((items) => interleave(first, items));
-}
-function interleave(item, items) {
-  if (!items.length) {
-    return [[item]];
-  }
-  const [first, ...rest] = items;
-  return [
-    [item, first, ...rest],
-    ...interleave(item, rest).map((items) => [first, ...items]),
-  ];
-}
 function parseLine(line) {
   return line.split(/to|=/).map((str) => str.trim());
 }
